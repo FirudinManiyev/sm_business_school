@@ -6,6 +6,10 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/public/Home";
 import About from "../pages/public/About";
 import NotFound from "../pages/errors/NotFound";
+import Courses from "../pages/admin/Courses";
+import Trainers from "../pages/admin/Trainers";
+import Students from "../pages/admin/Students";
+import Blog from "../pages/admin/Blog";
 
 export const router = createBrowserRouter([
     {
@@ -26,6 +30,10 @@ export const router = createBrowserRouter([
         ),
         children: [
             { path: "", element: <Dashboard /> },
+            { path: "courses", element: <Courses /> },
+            { path: "trainers", element: <Trainers /> },
+            { path: "students", element: <Students /> },
+            { path: "blog", element: <Blog /> },
         ],
     },
 
