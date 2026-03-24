@@ -1,22 +1,47 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-function NotFound() {
+export default function NotFound() {
     return (
-        <div>
-            <section className="flex items-center h-full p-16 dark:bg-gray-50 dark:text-gray-800">
-                <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-                    <div className="max-w-md text-center">
-                        <h2 className="mb-8 font-extrabold text-9xl dark:text-gray-400">
-                            <span className="sr-only">Error</span>404
-                        </h2>
-                        <p className="text-2xl font-semibold md:text-3xl">Sorry, we couldn't find this page.</p>
-                        <p className="mt-4 mb-8 dark:text-gray-600">But dont worry, you can find plenty of other things on our homepage.</p>
-                        <a rel="noopener noreferrer" href="#" className="px-8 py-3 font-semibold rounded dark:bg-violet-600 dark:text-gray-50">Back to homepage</a>
-                    </div>
+        <section className="flex items-center justify-center min-h-screen bg-blue-50 text-blue-900 p-6">
+            <div className="container flex flex-col items-center justify-center px-5 mx-auto">
+                <div className="max-w-md text-center">
+                    <h1
+                        className="text-9xl font-extrabold mb-6 animate-bounce text-blue-400"
+                        aria-hidden="true"
+                    >
+                        404
+                    </h1>
+                    <h2 className="text-2xl md:text-3xl font-semibold mb-4 animate-fadeInUp">
+                        Səhifə tapılmadı
+                    </h2>
+                    <p className="text-blue-700 mb-8 animate-fadeInUp delay-100">
+                        Amma narahat olma, saytımızda bir çox digər resursları tapa bilərsən.
+                    </p>
+                    <Link
+                        to="/"
+                        className="inline-block px-8 py-3 font-semibold rounded-lg bg-blue-500 text-white shadow-lg
+                       hover:bg-blue-600 hover:scale-105 transition transform duration-300"
+                    >
+                        Ana səhifəyə qayıt
+                    </Link>
                 </div>
-            </section>
-        </div>
-    )
-}
+            </div>
 
-export default NotFound
+            <style>
+                {`
+          @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+          }
+          .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease forwards;
+          }
+          .animate-fadeInUp.delay-100 {
+            animation-delay: 0.1s;
+          }
+        `}
+            </style>
+        </section>
+    );
+}
