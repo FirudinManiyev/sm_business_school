@@ -41,7 +41,6 @@ export default function ScrollToTop() {
                    hover:bg-blue-600 hover:scale-110 hover:shadow-blue-400/50
                    transition-all duration-300"
             >
-                {/* progress ring */}
                 <svg
                     className="absolute inset-0 h-full w-full rotate-[-90deg]"
                     viewBox="0 0 100 100"
@@ -67,7 +66,6 @@ export default function ScrollToTop() {
                     />
                 </svg>
 
-                {/* icon */}
                 <ArrowUp size={22} className="relative text-white" />
             </div>
         </div>

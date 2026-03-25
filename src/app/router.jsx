@@ -6,6 +6,7 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/public/Home";
 import About from "../pages/public/About";
 import NotFound from "../pages/errors/NotFound";
+import Unauthorized from "../pages/errors/Unauthorized";
 import Courses from "../pages/admin/Courses";
 import Trainers from "../pages/admin/Trainers";
 import Students from "../pages/admin/Students";
@@ -40,6 +41,11 @@ export const router = createBrowserRouter([
     {
         path: "*",
         element: <NotFound />,
+    },
+
+    {
+        path: "/unauthorized",
+        element: <Unauthorized />,
     },
 
 ]);
