@@ -18,9 +18,9 @@ const mobileExtraItems = [
 ];
 
 const socialItems = [
-    { icon: FaFacebookF, href: "#", label: "Facebook" },
-    { icon: FaInstagram, href: "#", label: "Instagram" },
-    { icon: FaLinkedinIn, href: "#", label: "LinkedIn" },
+    { icon: FaFacebookF, href: "https://www.facebook.com/smbusinessschool/", label: "Facebook" },
+    { icon: FaInstagram, href: "https://www.facebook.com/smbusinessschool/", label: "Instagram" },
+    { icon: FaLinkedinIn, href: "https://www.linkedin.com/showcase/smbusinessschool/", label: "LinkedIn" },
 ];
 
 function Navbar() {
@@ -35,7 +35,11 @@ function Navbar() {
         <header className="sticky top-0 z-50 border-b border-blue-100/80 bg-white/85 backdrop-blur-xl">
             <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-20 items-center justify-between gap-4">
-                    <Link to="/" className="group flex min-w-0 items-center gap-3">
+                    <Link
+                        to="/"
+                        rel="noopener noreferrer"
+                        className="group flex min-w-0 items-center gap-3"
+                    >
                         <div className="relative">
                             <div className="absolute -inset-1 rounded-full bg-linear-to-r from-blue-500 to-green-500 opacity-30 blur-md transition-opacity duration-300 group-hover:opacity-60" />
                             <img
@@ -57,7 +61,12 @@ function Navbar() {
 
                     <nav className="hidden items-center gap-7 lg:flex">
                         {navItems.map((item) => (
-                            <NavLink key={item.path} to={item.path} className={linkClass}>
+                            <NavLink
+                                key={item.path}
+                                to={item.path}
+                                rel="noopener noreferrer"
+                                className={linkClass}
+                            >
                                 {item.label}
                             </NavLink>
                         ))}
@@ -66,6 +75,7 @@ function Navbar() {
                     <div className="hidden items-center gap-3 lg:flex">
                         <NavLink
                             to="/contact"
+                            rel="noopener noreferrer"
                             className="rounded-full bg-linear-to-r from-blue-600 to-green-500 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-blue-200 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-green-200"
                         >
                             Əlaqə
@@ -80,6 +90,8 @@ function Navbar() {
                                     <a
                                         key={social.label}
                                         href={social.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         aria-label={social.label}
                                         className="grid h-9 w-9 place-items-center rounded-full border border-slate-200 text-slate-600 transition-all duration-300 hover:-translate-y-0.5 hover:border-green-400 hover:bg-green-50 hover:text-green-600"
                                     >
@@ -116,6 +128,7 @@ function Navbar() {
                                 <NavLink
                                     key={item.path}
                                     to={item.path}
+                                    rel="noopener noreferrer"
                                     onClick={() => setMobileOpen(false)}
                                     className={({ isActive }) =>
                                         `rounded-xl px-4 py-3 text-sm font-semibold transition-colors duration-300 ${
@@ -133,6 +146,7 @@ function Navbar() {
                                 <NavLink
                                     key={item.path}
                                     to={item.path}
+                                    rel="noopener noreferrer"
                                     onClick={() => setMobileOpen(false)}
                                     className={({ isActive }) =>
                                         `rounded-xl px-4 py-3 text-sm font-semibold transition-colors duration-300 ${
@@ -150,6 +164,7 @@ function Navbar() {
                         <div className="mt-4 flex items-center justify-between gap-3">
                             <NavLink
                                 to="/contact"
+                                rel="noopener noreferrer"
                                 onClick={() => setMobileOpen(false)}
                                 className="flex-1 rounded-xl bg-linear-to-r from-blue-600 to-green-500 px-4 py-3 text-center text-sm font-semibold text-white"
                             >
@@ -165,6 +180,8 @@ function Navbar() {
                                         <a
                                             key={social.label}
                                             href={social.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             aria-label={social.label}
                                             className="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 text-slate-600 transition-colors duration-300 hover:border-green-400 hover:text-green-600"
                                         >

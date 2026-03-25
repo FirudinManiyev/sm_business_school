@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { useState } from "react";
 import Sidebar from "../components/admin/Sidebar";
 import Topbar from "../components/admin/Topbar";
+import PageTransition from "../components/ui/PageTransition";
 
 function AdminLayout() {
     const [isOpen, setIsOpen] = useState(true);
@@ -23,7 +24,9 @@ function AdminLayout() {
                 />
 
                 <main className="p-6 overflow-y-auto">
-                    <Outlet />
+                    <PageTransition>
+                        <Outlet />
+                    </PageTransition>
                 </main>
             </div>
 
