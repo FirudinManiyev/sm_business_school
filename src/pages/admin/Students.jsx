@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import DataTable from "../../components/ui/DataTable";
 import FormModal from "../../components/ui/FormModal";
+import AdminPageShell from "../../components/admin/AdminPageShell";
 
 import {
     getStudents,
@@ -52,23 +53,24 @@ function Students() {
         fetchData();
     };
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) {
+        return (
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 text-sm font-medium text-slate-500 shadow-sm">
+                Loading students...
+            </div>
+        );
+    }
 
     return (
-        <div>
-            <div className="flex justify-between mb-4">
-                <h2 className="text-2xl font-bold">Students</h2>
-
-                <button
-                    onClick={() => {
-                        setSelected(null);
-                        setOpen(true);
-                    }}
-                    className="bg-blue-500 text-white px-4 py-2 rounded"
-                >
-                    + Add
-                </button>
-            </div>
+        <AdminPageShell
+            title="Students"
+            subtitle="Tələbə siyahısını idarə edin və qeydiyyatları yeniləyin."
+            actionLabel="+ Add Student"
+            onAction={() => {
+                setSelected(null);
+                setOpen(true);
+            }}
+        >
 
             <DataTable
                 columns={columns}
@@ -91,7 +93,7 @@ function Students() {
                     onSubmit={handleSave}
                 />
             )}
-        </div>
+        </AdminPageShell>
     );
 }
 

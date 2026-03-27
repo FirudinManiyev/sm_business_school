@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import DataTable from "../../components/ui/DataTable";
 import FormModal from "../../components/ui/FormModal";
+import AdminPageShell from "../../components/admin/AdminPageShell";
 
 import {
     getTrainers,
@@ -52,23 +53,24 @@ function Trainers() {
         fetchData();
     };
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) {
+        return (
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 text-sm font-medium text-slate-500 shadow-sm">
+                Loading trainers...
+            </div>
+        );
+    }
 
     return (
-        <div>
-            <div className="flex justify-between mb-4">
-                <h2 className="text-2xl font-bold">Trainers</h2>
-
-                <button
-                    onClick={() => {
-                        setSelected(null);
-                        setOpen(true);
-                    }}
-                    className="bg-blue-500 text-white px-4 py-2 rounded"
-                >
-                    + Add
-                </button>
-            </div>
+        <AdminPageShell
+            title="Trainers"
+            subtitle="Təlimçi məlumatlarını yeniləyin və yeni təlimçi əlavə edin."
+            actionLabel="+ Add Trainer"
+            onAction={() => {
+                setSelected(null);
+                setOpen(true);
+            }}
+        >
 
             <DataTable
                 columns={columns}
@@ -91,7 +93,7 @@ function Trainers() {
                     onSubmit={handleSave}
                 />
             )}
-        </div>
+        </AdminPageShell>
     );
 }
 

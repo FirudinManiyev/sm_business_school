@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
     ArrowRight,
     Briefcase,
@@ -60,13 +61,14 @@ const serviceTracks = [
 ];
 
 const heroStats = [
-    { label: "Mentor", value: "25+" },
-    { label: "Praktiki Tapşırıq", value: "120+" },
-    { label: "Karyera Dəstəyi", value: "100%" },
+    { label: "Məzun", value: "150+" },
+    { label: "Layihə", value: "25+" },
+    { label: "Məmnunluq", value: "98%" },
 ];
 
 function ServicesHero() {
     return (
+        
         <div className="relative overflow-hidden bg-linear-to-b from-blue-100/85 via-blue-50 to-white">
             <div className="pointer-events-none absolute -right-20 top-8 h-56 w-56 rounded-full bg-green-300/30 blur-3xl" />
             <div className="pointer-events-none absolute -left-12 bottom-0 h-48 w-48 rounded-full bg-blue-300/40 blur-2xl" />
@@ -213,7 +215,7 @@ function Services() {
                 <div className="mb-6">
                     <p className="text-sm font-semibold uppercase tracking-wider text-blue-700">Praktiki Məsləhətlər</p>
                     <h2 className="mt-1 text-2xl font-extrabold text-slate-900 sm:text-3xl">
-                        Açılıb-Bağlanan Karyera Tövsiyələri
+                        Karyera Tövsiyələri
                     </h2>
                 </div>
 
@@ -277,13 +279,13 @@ function Services() {
                             </p>
                         </div>
 
-                        <button
-                            type="button"
-                            className="inline-flex items-center justify-center rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800"
+                        <Link
+                            to="/contact"
+                            className="inline-flex items-center justify-center rounded-2xl bg-slate-900 cursor-pointer px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800"
                         >
                             Konsultasiya Al
                             <ArrowRight size={16} className="ml-2" />
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>
